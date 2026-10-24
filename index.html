@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Clariez - Web Developer</title>
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <!-- Tailwind CSS CDN with forms and container plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cyberDark: '#080a10',
+              cyberCard: '#11131f',
+              cyberBorder: '#1e2238',
+              neonCyan: '#00ffa3',
+              neonCyanHover: '#00d688',
+              neonPurple: '#9d4edd',
+              neonPurpleHover: '#7b2cbf',
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+            },
+            boxShadow: {
+              'neon-cyan': '0 0 20px -3px rgba(0, 255, 163, 0.45)',
+              'neon-purple': '0 0 20px -3px rgba(157, 78, 221, 0.45)',
+              'card-glow': '0 8px 30px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(157, 78, 221, 0.15)',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- BEGIN: Custom Cyberpunk Styles -->
+    <style data-purpose="cyberpunk-theme-effects">
+      body {
+        background-color: #080a10;
+        color: #e2e8f0;
+        background-image:
+          radial-gradient(circle at 15% 15%, rgba(157, 78, 221, 0.12) 0%, transparent 40%),
+          radial-gradient(circle at 85% 65%, rgba(0, 255, 163, 0.08) 0%, transparent 40%),
+          linear-gradient(to bottom, #080a10, #0a0d17);
+        min-height: 100vh;
+      }
+
+      /* Ambient card outline glow */
+      .cyber-panel {
+        background: rgba(17, 19, 31, 0.85);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        transition: all 0.3s ease;
+      }
+
+      .cyber-panel:hover {
+        border-color: rgba(157, 78, 221, 0.4);
+        box-shadow: 0 10px 30px -10px rgba(157, 78, 221, 0.25);
+      }
+
+      /* Subtle grid line overlay in header */
+      .hero-glow-border {
+        position: relative;
+      }
+
+      .hero-glow-border::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: 1rem;
+        background: linear-gradient(135deg, rgba(0, 255, 163, 0.7), rgba(157, 78, 221, 0.7));
+        z-index: -1;
+        filter: blur(6px);
+        opacity: 0.6;
+      }
+    </style>
+    <!-- END: Custom Cyberpunk Styles -->
+  </head>
+  <body class="flex flex-col min-h-screen antialiased selection:bg-neonCyan selection:text-black">
+    <!-- BEGIN: MainHeader -->
+    <header class="sticky top-0 z-50 bg-[#080a10]/90 backdrop-blur-md border-b border-cyberBorder/60" data-purpose="site-navigation-header">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <!-- Logo / Brand Identifier -->
+        <a aria-label="Home" class="flex items-center gap-2 group focus:outline-none" href="#">
+          <span class="w-3 h-3 rounded-full bg-neonCyan shadow-neon-cyan transition-transform group-hover:scale-125"></span>
+          <!-- EDIT: NAVBAR_BRAND -->
+          <span class="font-bold text-lg tracking-wider text-white group-hover:text-neonCyan transition-colors"> FCB Portfolio </span>
+        </a>
+        <!-- Desktop Navigation Menu -->
+        <nav aria-label="Main Navigation" class="flex items-center gap-6 text-sm font-medium text-slate-300">
+          <a class="hover:text-neonCyan transition-colors" href="#about">About</a>
+          <a class="hover:text-neonCyan transition-colors" href="#projects">Projects</a>
+          <a class="hover:text-neonCyan transition-colors" href="#skills">Skills</a>
+          <a class="hover:text-neonCyan transition-colors" href="#contact">Contacts</a>
+        </nav>
+      </div>
+    </header>
+    <!-- END: MainHeader -->
+    <!-- BEGIN: MainContent -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-20 sm:space-y-24 w-full">
+      <!-- BEGIN: HeroSection -->
+      <section class="pt-4 pb-2" data-purpose="hero-developer-intro" id="hero">
+        <div class="flex flex-col md:flex-row items-center gap-8 lg:gap-14">
+          <!-- Hero Developer Avatar Frame -->
+          <div class="w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72 flex-shrink-0 hero-glow-border rounded-2xl overflow-hidden p-[2px]">
+            <div class="w-full h-full bg-[#080a10] rounded-2xl overflow-hidden">
+              <!-- EDIT: HERO_AVATAR_IMAGE -->
+              <img alt="Futuristic sci-fi mecha game developer avatar, stylized digital character portrait with glowing cybernetic visor and sleek neon armor, vibrant emerald and purple ambient lighting, high fidelity 3D game art style" class="w-full h-full object-cover object-center transform transition duration-500 hover:scale-105" src="./cruz_formal_pic.jpeg" />
+            </div>
+          </div>
+          <!-- Hero Content / Introduction -->
+          <div class="flex flex-col text-center md:text-left space-y-4">
+            <!-- EDIT: HERO_DEVELOPER_NAME -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight"> Clariez Cruz</h1>
+            <!-- EDIT: HERO_DEVELOPER_ROLE -->
+            <h2 class="text-xl sm:text-2xl font-semibold text-neonCyan tracking-wide"> Web Developer </h2>
+            <!-- EDIT: HERO_SHORT_INTRODUCTION -->
+            <p class="text-slate-300 text-base sm:text-lg max-w-xl font-light leading-relaxed"> I am a web developer who builds responsive, user-friendly websites and web applications focused on performance and seamless user experiences. Specializing in modern front-end and back-end technologies, I transform design concepts and functional requirements into clean, efficient code. From intuitive user interfaces to robust database management, I deliver reliable digital solutions that help clients and businesses establish a strong online presence.</p>
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-3">
+              <a class="px-6 py-2.5 rounded-lg bg-neonCyan text-cyberDark font-bold text-sm tracking-wide shadow-neon-cyan hover:bg-neonCyanHover hover:scale-[1.02] active:scale-[0.98] transition-all" href="#projects"> View My Projects </a>
+              <a class="px-6 py-2.5 rounded-lg bg-neonPurple/20 border border-neonPurple text-purple-200 font-semibold text-sm tracking-wide hover:bg-neonPurple/30 hover:border-purple-400 active:scale-[0.98] transition-all shadow-neon-purple" href="#contact"> Contacts </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- END: HeroSection -->
+      <!-- BEGIN: AboutSection -->
+      <section class="scroll-mt-24" data-purpose="about-section" id="about">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-8 tracking-wide"> Full-stack web developer specializing in responsive design, modern web applications, and clean code. Explore my portfolio of custom, scalable digital solutions.</h2>
+        <!-- About Description Card Container -->
+        <div class="cyber-panel rounded-2xl p-8 sm:p-12 text-center max-w-4xl mx-auto shadow-card-glow">
+          <!-- EDIT: ABOUT_YOU -->
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed"> About You </p>
+        </div>
+      </section>
+      <!-- END: AboutSection -->
+      <!-- BEGIN: ProjectsSection -->
+      <section class="scroll-mt-24" data-purpose="projects-showcase" id="projects">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10 tracking-wide"> Projects </h2>
+        <!-- 3-Column Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Project Card 1 -->
+          <article class="cyber-panel rounded-2xl overflow-hidden flex flex-col group border border-cyberBorder hover:border-neonPurple/50">
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-black/40">
+              <!-- EDIT: PROJECT_1_IMAGE -->
+              <img alt="Sci-Fi Action RPG game project screenshot, mech warriors in an alien neon overgrown biome, cinematic lighting, Unreal Engine 5 aesthetic" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtbUhtlm00uI-9kuqBKuL0nMtz6mx3lo3MGzFsDXc2IkWE_WNxx9MAbLLvyuyiea629zibPhRC50swqKvWxWKQGioNayhXg06J8Vwv8kt8gw7-qoP1Z4IoDrmi1aKCccI92QawPWX2Cwn9sb6-v6_2wj7NOLPUfRPXKHayWHEyQ1a0vJDFA8gQHcMMSQeYPPqtWNq0y_5t_myeyXjyR84iJsn0rUQdI5nMh48keqZQ" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left">
+              <!-- EDIT: PROJECT_1_TITLE -->
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neonCyan transition-colors"> Project Title </h3>
+              <!-- EDIT: PROJECT_1_DESCRIPTION -->
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed"> Project Description </p>
+              <div>
+                <a class="inline-block px-5 py-2 rounded-lg bg-neonCyan text-cyberDark font-bold text-xs uppercase tracking-wider hover:bg-neonCyanHover transition-all shadow-neon-cyan" href="#"> Project Link </a>
+              </div>
+            </div>
+          </article>
+          <!-- Project Card 2 -->
+          <article class="cyber-panel rounded-2xl overflow-hidden flex flex-col group border border-cyberBorder hover:border-neonPurple/50">
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-black/40">
+              <!-- EDIT: PROJECT_2_IMAGE -->
+              <img alt="Futuristic space simulator cockpit HUD game concept, vibrant cosmic nebulae and planetary ring view, high-tech interface display" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChvjIrUYux10UrIO-h-3eZeEDCS9UtBLrow8_NV_NgGnnuAG4ImVEP1nspVimHD7YzabsEkQE7RXOIgaaNMZdh6dmcg2mQeMz_icRUokrhv1jgHcP9i2W43grGOQsl3P3UZ-FJeITtFP6wc5IzAAkuH9q8_SAc7v9hVWoPLPq-aPLK4iwK8dku_O7f9SPsyxt0qLINLxle6SmUgzCvzTse6Mm354kf4DM_mq7C6jT6" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left">
+              <!-- EDIT: PROJECT_2_TITLE -->
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neonCyan transition-colors"> Project Title </h3>
+              <!-- EDIT: PROJECT_2_DESCRIPTION -->
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed"> Project Description </p>
+              <div>
+                <a class="inline-block px-5 py-2 rounded-lg bg-neonCyan text-cyberDark font-bold text-xs uppercase tracking-wider hover:bg-neonCyanHover transition-all shadow-neon-cyan" href="#"> Project Link </a>
+              </div>
+            </div>
+          </article>
+          <!-- Project Card 3 -->
+          <article class="cyber-panel rounded-2xl overflow-hidden flex flex-col group border border-cyberBorder hover:border-neonPurple/50">
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-black/40">
+              <!-- EDIT: PROJECT_3_IMAGE -->
+              <img alt="Dark fantasy tech cyberpunk underworld game level design, glowing holographic glyphs, rain-slicked dark alleyways with neon luminescence" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP7MjwTJsYfIf_oyxFtaIFhoJf5G5PJq1-MrvnlJqMBm1MN73j4vhg5PnA7ClwWFDH_WYzCULvw3UWSle3vKAyuoAog32jTjs5xJSRpOeG1crS7etFqAb0ygsEMrsIBts3p1Ny1xAGPiRldDafw9JJnHNXpePUH8PvNbFlFKNM6l2Jp1l25HqPT6V9BH-2zrs4_0tWbpEIrb5Qjn20Sze2WOe9UyYMQ_rq736yfd18" />
+            </div>
+            <div class="p-6 flex flex-col flex-grow text-left">
+              <!-- EDIT: PROJECT_3_TITLE -->
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neonCyan transition-colors"> Project Title </h3>
+              <!-- EDIT: PROJECT_3_DESCRIPTION -->
+              <p class="text-slate-400 text-sm mb-6 flex-grow leading-relaxed"> Project Description </p>
+              <div>
+                <a class="inline-block px-5 py-2 rounded-lg bg-neonCyan text-cyberDark font-bold text-xs uppercase tracking-wider hover:bg-neonCyanHover transition-all shadow-neon-cyan" href="#"> Project Link </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- END: ProjectsSection -->
+      <!-- BEGIN: SkillsAndToolsSection -->
+      <section class="scroll-mt-24" data-purpose="skills-and-technologies" id="skills">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10 tracking-wide"> Skills and Tools </h2>
+        <!-- Side-by-side Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <!-- Left: Skills Box -->
+          <div class="cyber-panel rounded-2xl p-8 text-center flex flex-col items-center">
+            <h3 class="text-lg font-bold text-white mb-6 tracking-wide"> Skills </h3>
+            <!-- EDIT: SKILLS_LIST -->
+            <ul class="space-y-3 text-slate-300 text-sm">
+              <li class="hover:text-neonCyan transition-colors">ReactJS</li>
+              <li class="hover:text-neonCyan transition-colors">VueJS</li>
+              <li class="hover:text-neonCyan transition-colors">Bootstap</li>
+            </ul>
+          </div>
+          <!-- Right: Tools / Technologies Box -->
+          <div class="cyber-panel rounded-2xl p-8 text-center flex flex-col items-center">
+            <h3 class="text-lg font-bold text-white mb-6 tracking-wide"> Sublime</h3>
+            <!-- EDIT: TOOLS_LIST -->
+            <ul class="space-y-3 text-slate-300 text-sm">
+              <li class="hover:text-neonPurple transition-colors">MongoDB Compass</li>
+              <li class="hover:text-neonPurple transition-colors">Postman</li>
+              <li class="hover:text-neonPurple transition-colors">Tool / Technology</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- END: SkillsAndToolsSection -->
+      <!-- BEGIN: ContactSection -->
+      <section class="scroll-mt-24" data-purpose="contact-information" id="contact">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-8 tracking-wide"> Contact </h2>
+        <!-- Centered Contact Panel -->
+        <div class="cyber-panel rounded-2xl p-8 sm:p-10 max-w-3xl mx-auto text-center space-y-4 shadow-card-glow">
+          <!-- EDIT: CONTACT_HEADING -->
+          <h3 class="text-xl font-bold text-white"> 09672314567</h3>
+          <!-- EDIT: CONTACT_EMAIL -->
+          <p class="text-slate-300 text-sm sm:text-base">
+            <a class="hover:text-neonCyan transition-colors" href="mailto:your-email@example.com"> cmcruz@gmail.com </a>
+          </p>
+          <!-- EDIT: CONTACT_SOCIAL_LINK -->
+          <div class="pt-2">
+            <a class="inline-block text-sm font-semibold text-neonCyan hover:underline hover:text-neonCyanHover transition-all" href="#" rel="noopener noreferrer" target="_blank">https://www.linkedin.com/feed/</a>
+          </div>
+        </div>
+      </section>
+      <!-- END: ContactSection -->
+    </main>
+    <!-- END: MainContent -->
+    <!-- BEGIN: MainFooter -->
+    <footer class="border-t border-cyberBorder/60 py-6 text-center text-xs text-slate-500 bg-[#06080d]" data-purpose="site-footer">
+      <div class="max-w-6xl mx-auto px-4">
+        <p>© <span id="current-year">2025</span> Cyberpunk Game Developer Portfolio. All rights reserved. </p>
+      </div>
+    </footer>
+    <!-- END: MainFooter -->
+  </body>
+</html>
